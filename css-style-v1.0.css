@@ -1,15 +1,47 @@
-header {
+body {
+  background-color: #060d13;
+}
+
+div.header {
+  margin: 0;
+  padding: 0px 100px;
+}
+
+div.logo {
+  display: inline-block;
+  background-color: #330000;
+}
+
+div.navigation {
+  display: inline-block;
+}
+div.navigation ul {
+  /* Removes the bullets. */
+  list-style-type: none;
+  /* Hides content if it excedes its container. */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+div.navigation li {
+  float: left;
+}
+div.navigation li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  color: white;
+}
+div.navigation li a:hover {
+  background-color: #111;
+}
+
+div.content {
 
 }
 
-navigation {
-
-}
-
-content {
-
-}
-
-footer {
+div.footer {
 
 }
