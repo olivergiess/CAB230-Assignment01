@@ -1,19 +1,18 @@
 body {
   background-color: #060d13;
+  margin: 0;
 }
 
 div.header {
-  margin: 0;
-  padding: 0px 100px;
+  background-color: #333;
+  padding: 0 11%;
 }
 
 div.logo {
-  display: inline-block;
-  background-color: #330000;
 }
 
 div.navigation {
-  display: inline-block;
+
 }
 div.navigation ul {
   /* Removes the bullets. */
@@ -22,7 +21,7 @@ div.navigation ul {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background-color: #333;
+
 }
 div.navigation li {
   float: left;
@@ -31,7 +30,7 @@ div.navigation li a {
   display: block;
   text-align: center;
   text-decoration: none;
-  padding: 14px 16px;
+  padding: 18% 16px;
   color: white;
 }
 div.navigation li a:hover {
@@ -39,8 +38,13 @@ div.navigation li a:hover {
 }
 
 div.content {
-
+  background-color: #18222A;
+  position: absolute;
+  left: 11%;
+  width: 78%;
+  height: 92.5%;
 }
+
 
 div.footer {
 
