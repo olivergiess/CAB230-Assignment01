@@ -1,51 +1,112 @@
-body {
-  background-color: #060d13;
+@font-face {
+    font-family: main;
+    src: url('assets/fonts/roboto/Roboto-Regular.ttf');
+    font-weight: bold;
+}
+
+body{
   margin: 0;
+  background-color: #FFFFFF;
 }
 
-div.header {
-  background-color: #333;
+html, body{
+  height: 91.8%;
+}
+
+/* REMOVE AFTER TESTING COMPLETE */
+body p{margin: 0;}
+
+#header {
   padding: 0 11%;
-}
+  position: fixed;
+  z-index: 2;
+  top: 0%;
+  width: 78%;
+  max-height: 47px;
 
-div.logo {
+  background-color: #333;
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+
+  font-family: main;
 }
 
 div.navigation {
 
 }
 div.navigation ul {
-  /* Removes the bullets. */
-  list-style-type: none;
   /* Hides content if it excedes its container. */
   overflow: hidden;
   margin: 0;
   padding: 0;
-
+  /* Removes the bullets. */
+  list-style-type: none;
 }
 div.navigation li {
   float: left;
 }
 div.navigation li a {
   display: block;
+  padding: 14px 16px;
   text-align: center;
   text-decoration: none;
-  padding: 18% 16px;
   color: white;
 }
 div.navigation li a:hover {
-  background-color: #111;
+  background-color: #F1B919;
 }
 
-div.content {
-  background-color: #18222A;
-  position: absolute;
+#content{
+  min-height: 100%;
+  padding: 2%;
+  position: relative;
+  z-index: 1;
   left: 11%;
-  width: 78%;
-  height: 92.5%;
+  width: 74%;
+  top: 47px;
+
+  /* Using RGBA allows us to set opacity. */
+  background-color: rgba(255, 202, 38, 0.5);
 }
 
-
-div.footer {
+#footer{
 
 }
+
+#search-form{
+  margin-bottom: 2%;
+}
+
+#search-form .input-field, .select-field{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  outline: none;
+}
+#search-form .input-field:focus, .select-field:focus{
+  border: 1px solid #35397E;
+}
+
+#search-form input[type=submit]{
+  padding: 8px 15px 8px 15px;
+  border: none;
+  float: right;
+  background: #35397E;
+  color: #fff;
+  box-shadow: 1px 1px 4px #DADADA;
+  -moz-box-shadow: 1px 1px 4px #DADADA;
+  -webkit-box-shadow: 1px 1px 4px #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+  
