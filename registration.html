@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script type="text/javascript" src="myscripts.js"></script>
+</head>
 <body>
 
-<form>
+<form name="Form1" onsubmit="checkEmail(); checkPassword();">
   <h1><b>Sign Up</b></h1><hr>
   First Name:
   <input type="text" name="firstname" required>
@@ -11,19 +14,20 @@
   <input type="text" name="lastname" required>
   <p>
   Your Email:
-  <input type="text" name="email" required>
+  <input type="text" name="email" required title="Make sure you enter in an @">
   <p>
   Re-enter Email:
-  <input type="text" name="email2" required>
+  <input type="text" name="email2" required title="Make sure you enter the same email">
   <p>
   Password:
-  <input type="text" name="password" required>
+  <input type="password" name="password" required>
   <p>
   Re-enter Password:
-  <input type="text" name="password2" required>
+  <input type="password" name="password2" required>
+  
   <p>
   Sex:
-  <input type="radio" name="sex" value="male">Male
+  <input type="radio" name="sex" value="male" checked>Male
   <input type="radio" name="sex" value="female">Female
   <p>
   Birthday(dd/mm/yyyy):
