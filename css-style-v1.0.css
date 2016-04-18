@@ -33,7 +33,6 @@ body p{margin: 0;}
 }
 
 div.navigation {
-
 }
 div.navigation ul {
   /* Hides content if it excedes its container. */
@@ -68,17 +67,38 @@ div.navigation li a:hover {
 
   /* Using RGBA allows us to set opacity. */
   background-color: rgba(255, 202, 38, 0.5);
+
+  font-family: main;
+}
+
+#reviews{
+  margin-top: 3%;
+  margin-left: 6.5%;
+}
+#reviews td{
+  text-align: center;
+}
+#reviews .data{
+  margin: 5%;
+  padding-left: 0.1%;
+  padding-right: 0.1%;
+  background-color: white;
+  border-radius: 5 px;
 }
 
 #footer{
-
 }
 
-#search-form{
+#search-form, #registration-form, #login-form{
   margin-bottom: 2%;
 }
-
-#search-form .input-field, .select-field{
+#registration-form, #login-form{
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+#search-form .input-field, .select-field,
+#registration-form .input-field, .select-field, .input-radio,
+#login-form .input-field{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -90,16 +110,19 @@ div.navigation li a:hover {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   padding: 7px;
+  margin: 10px;
   outline: none;
 }
-#search-form .input-field:focus, .select-field:focus{
+#search-form .input-field:focus, .select-field:focus,
+#registration-form .input-field:focus, .select-field:focus,
+#login-form .input-field:focus{
   border: 1px solid #35397E;
 }
-
-#search-form input[type=submit]{
+#search-form input[type=submit],
+#registration-form input[type=submit], input[type=reset],
+#login-form .login-button, .register-button{
   padding: 8px 15px 8px 15px;
   border: none;
-  float: right;
   background: #35397E;
   color: #fff;
   box-shadow: 1px 1px 4px #DADADA;
@@ -109,4 +132,3 @@ div.navigation li a:hover {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-  

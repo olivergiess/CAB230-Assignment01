@@ -13,6 +13,3 @@ function checkEmail() {
 		window.alert("Both email should be same!");
 	}
 }
-
-
-

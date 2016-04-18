@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
 
-<form name="Form2">
-  <h1><b>Sign Up</b></h1><hr>
-  Email:
-  <input type="text" name="email" required title="Make sure you enter in an @">
-  <p>
-  Password:
-  <input type="password" name="password" required>
-  <p>
-  <button type="button">Log in</button>
-  <button type="button" onclick="./registration.html">Register</button>
-</form>
+<html lang="en">
+  <head>
+    <title>Brisbane Art</title>
+  </head>
 
-</body>
+  <body>
+    <link rel="stylesheet" type="text/css" href="css-style-v1.0.css">
+
+    <div id="header">
+      <div class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="">Review</a></li>
+          <li style="float:right"><a href="login.html">Login</a></li>
+          <li style="float:right"><a href="registration.html">Register</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="login-form">
+        <form name="login">
+          Email
+          <p>
+          <input class="input-field" type="text" name="email" required title="Make sure you enter in an @">
+          <p>
+          Password
+          <p>
+          <input class="input-field" type="password" name="password" required>
+          <p>
+          <button class="login-button" type="button">Log in</button>
+          <button class="register-button" type="button" onclick="./registration.html">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
 </html>
