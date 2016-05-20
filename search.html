@@ -7,6 +7,7 @@
 
   <body>
     <link rel="stylesheet" type="text/css" href="css-style-v1.0.css">
+    <script src="javascript/scripts.js"></script>
 
     <div id="header">
       <div class="navigation">
@@ -22,26 +23,28 @@
 
     <div id="content">
       <div id="search-form">
-        <form action="results.html">
-          <select class="select-field">
-            <option value="">Suburb</option>
-            <option value="Brisbane CBD">Brisbane CBD</option>
-            <option value="Southbank">Southbank</option>
-            <option value="Etc">Etc</option>
+        <form name="search">
+          <button name="location" type="button">Geolocate!</button>
+
+          <?php
+            include('php/suburbs.php');
+          ?>
+
+          <select name="rating" class="select-field">
+            <option value="1">1 Star</option>
+            <option value="2">2 Star</option>
+            <option value="3">3 Star</option>
+            <option value="4">4 Star</option>
+            <option value="5">5 Star</option>
           </select>
 
-          <select class="select-field">
-            <option value="star-1">1 Star</option>
-            <option value="star-2">2 Star</option>
-            <option value="star-3">3 Star</option>
-            <option value="star-4">4 Star</option>
-            <option value="star-5">5 Star</option>
-          </select>
+          <input name="name" class="input-field" type="text" name="searchParameters">
 
-          <input class="input-field" type="text" name="searchParameters">
-
-          <input type="submit" style="float: right;" value="Find Art!">
+          <button type="button"  style="float: right;" onclick="comp()">Find Art!</button>
         </form>
+      </div>
+
+      <div id="results">
       </div>
     </div>
 

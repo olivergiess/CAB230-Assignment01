@@ -21,51 +21,78 @@
       </div>
     </div>
 
+    <script>
+        function validate() {
+
+        var pw1 = document.forms["Form1"]["password"].value;
+        var pw2 = document.forms["Form1"]["password2"].value;
+
+        var email1 = document.forms["Form1"]["email"].value;
+        var email2 = document.forms["Form1"]["email2"].value;
+
+        var output = "";
+
+        if (pw1 != pw2) {
+            output += "Passwords do not match! ";
+        }
+        if(email1 != email2){
+          output += "Emails do not match! ";
+        }
+
+        if(output != ""){
+          window.alert(output)
+          return false;
+        }
+
+        
+      }
+    </script>
+
     <div id="content">
       <div id="registration-form">
-        <form name="Form1" onsubmit="checkEmail(); checkPassword();">
+        <form name="Form1">
           Name
           <p>
-          <input class="input-field" type="text" name="firstname" required>
+            <input class="input-field" type="text" name="firstname" required>
           <p>
 
           Surname
           <p>
-          <input class="input-field" type="text" name="lastname" required>
+            <input class="input-field" type="text" name="lastname" required>
           <p>
 
           Email
           <p>
-          <input class="input-field" type="text" name="email" required title="Make sure you enter in an @">
+            <input class="input-field" type="email" name="email" required title="Make sure you enter in an @">
           <p>
 
           Confirm Email
           <p>
-          <input class="input-field" type="text" name="email2" required title="Make sure you enter the same email">
+            <input class="input-field" type="email" name="email2" required title="Make sure you enter the same email">
           <p>
 
           Password
           <p>
-          <input class="input-field" type="password" name="password" required>
+            <input class="input-field" type="password" name="password" required>
           <p>
 
           Confirm Password
           <p>
-          <input class="input-field" type="password" name="password2" required>
+            <input class="input-field" type="password" name="password2" required>
           <p>
 
-          <input class="input-radio" type="radio" name="sex" value="male" checked>Male
-          <input class="input-radio" type="radio" name="sex" value="female">Female
+            <input class="input-radio" type="radio" name="sex" value="male" checked>Male
+            <input class="input-radio" type="radio" name="sex" value="female">Female
           <p>
 
           Birthday(dd/mm/yyyy)
           <p>
-          <input class="input-field" type="text" name="day" size="2" maxlength="2" required>
-          <input class="input-field" type="text" name="month" size="2" maxlength="2" required>
-          <input class="input-field" type="text" name="year" size="4" maxlength="4" required>
+            <input class="input-field" type="text" name="day" size="2" maxlength="2" required>
+            <input class="input-field" type="text" name="month" size="2" maxlength="2" required>
+            <input class="input-field" type="text" name="year" size="4" maxlength="4" required>
           <p>
 
-          <input type="submit" value="Submit">
+          <input type="submit" onclick="validate()"value="Submit">
           <input type="reset" value="Reset">
         </form>
       </div>

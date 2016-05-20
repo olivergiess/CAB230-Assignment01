@@ -71,6 +71,19 @@ div.navigation li a:hover {
   font-family: main;
 }
 
+#image-container{
+  width:100%;
+  height:100%;
+}
+
+#image-container img{
+  width: 100%;
+}
+
+#text-container{
+   text-align: center;
+}
+
 #reviews{
   margin-top: 3%;
   margin-left: 6.5%;
@@ -118,9 +131,10 @@ div.navigation li a:hover {
 #login-form .input-field:focus{
   border: 1px solid #35397E;
 }
-#search-form input[type=submit],
+#search-form button,
 #registration-form input[type=submit], input[type=reset],
-#login-form .login-button, .register-button{
+#login-form .login-button, .register-button,
+#registration-form button{
   padding: 8px 15px 8px 15px;
   border: none;
   background: #35397E;
@@ -131,4 +145,19 @@ div.navigation li a:hover {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+}
+
+#results table{
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid;
+}
+#results td{
+  padding: 10px;
+}
+#results tr:first-child{
+  border: 1px solid;
+}
+#results tr:nth-child(odd){
+  background: #ffffcc;
 }
