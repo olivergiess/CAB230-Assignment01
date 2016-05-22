@@ -29,7 +29,7 @@
               <td>Description</td>
             </tr>';
       foreach($results as $result){
-        echo '<tr onclick="document.location = item.html">';
+        echo "<tr onclick='window.location href='index.html';'>";
           echo '<td>' . $result['Name Title'] . '</td>';
           echo '<td>' . $result['Primary Maker name only'] . '</td>';
           echo '<td>' . $result['Street Location'] . '</td>';

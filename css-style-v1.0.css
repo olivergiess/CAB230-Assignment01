@@ -157,7 +157,13 @@ div.navigation li a:hover {
 }
 #results tr:first-child{
   border: 1px solid;
-}
-#results tr:nth-child(odd){
   background: #ffffcc;
+}
+/*#results tr:nth-child(odd){
+  background: #ffffcc;
+}*/
+#results tr:hover{
+  background: #ffffcc;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }

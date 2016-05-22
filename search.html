@@ -27,7 +27,7 @@
           <button name="location" type="button">Geolocate!</button>
 
           <?php
-            include('php/suburbs.php');
+            include('php/generateSuburbsSelect.php');
           ?>
 
           <select name="rating" class="select-field">
@@ -45,6 +45,9 @@
       </div>
 
       <div id="results">
+        <table>
+          <tr onclick='window.location.href = "index.html"'><td>CLICK ME!</td></tr>
+        </table>
       </div>
     </div>
 
