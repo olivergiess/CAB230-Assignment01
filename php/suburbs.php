@@ -2,7 +2,7 @@
   include('connect.inc');
   try{
     $results = $pdo->query('SELECT DISTINCT Suburb
-                            FROM n8593370.art');
+                            FROM n8593370.items');
 
     echo '<select name="suburb" class="select-field">
       <option value="">Suburb</option>';

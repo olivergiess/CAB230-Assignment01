@@ -3,22 +3,16 @@
 <html lang="en">
   <head>
     <title>Brisbane Art</title>
+
+    <link rel="stylesheet" type="text/css" href="css-style-v1.0.css">
+    <script type="text/javascript" src="myscripts.js"></script>
   </head>
 
   <body>
-    <link rel="stylesheet" type="text/css" href="css-style-v1.0.css">
-    <script type="text/javascript" src="myscripts.js"></script>
-
     <div id="header">
-      <div class="navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href=" search.html">Search</a></li>
-          <li><a href="">Review</a></li>
-          <li style="float:right"><a href="login.html">Login</a></li>
-          <li style="float:right"><a href="registration.html">Register</a></li>
-        </ul>
-      </div>
+      <?php
+        include('php/menu.inc');
+      ?>
     </div>
 
     <div id="content">
@@ -30,10 +24,9 @@
       </div>
 
       <script type="text/javascript">
-        
+
       </script>
     </div>
-
     <div id="footer"></div>
   </body>
 </html>

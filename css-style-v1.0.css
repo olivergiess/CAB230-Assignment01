@@ -102,15 +102,15 @@ div.navigation li a:hover {
 #footer{
 }
 
-#search-form, #registration-form, #login-form{
+#search-form, #registration, #login-form{
   margin-bottom: 2%;
 }
-#registration-form, #login-form{
+#registration, #login-form{
   margin-bottom: 2%;
   margin-left: 2%;
 }
 #search-form .input-field, .select-field,
-#registration-form .input-field, .select-field, .input-radio,
+#registration .input-field, .select-field, .input-radio,
 #login-form .input-field{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -127,14 +127,14 @@ div.navigation li a:hover {
   outline: none;
 }
 #search-form .input-field:focus, .select-field:focus,
-#registration-form .input-field:focus, .select-field:focus,
+#registration .input-field:focus, .select-field:focus,
 #login-form .input-field:focus{
   border: 1px solid #35397E;
 }
 #search-form button,
-#registration-form input[type=submit], input[type=reset],
+#registration input[type=submit], input[type=reset],
 #login-form .login-button, .register-button,
-#registration-form button{
+#registration button{
   padding: 8px 15px 8px 15px;
   border: none;
   background: #35397E;
@@ -145,6 +145,10 @@ div.navigation li a:hover {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+  margin: 10px;
+}
+#search-form button[name="right-button"]{
+  float: right;
 }
 
 #results table{
@@ -166,4 +170,15 @@ div.navigation li a:hover {
   background: #ffffcc;
   border-top: 1px solid;
   border-bottom: 1px solid;
+}
+
+#results h1{
+  text-align: center;
+}
+
+#registration .input-field:invalid{
+  border: 1px solid red;
+}
+#registration .input-field:valid{
+  border: 1px solid green;
 }
