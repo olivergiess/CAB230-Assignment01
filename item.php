@@ -4,21 +4,43 @@
     session_start();
     include("php/connect.inc");
 
-    if(isset($_POST['rating']) && isset($_POST['review'])){
+    if(isset($_POST['rating']) && $_POST['review'] != ""){
       if($_SESSION['userAuthenticated']){
         try{
+          $cleantext = htmlspecialchars($_POST['review'], ENT_QUOTES);
+
           $stmt = $pdo->prepare('INSERT INTO n8593370.reviews (name, email, rating, review)
                                  VALUES (:name, :email, :rating, :review)');
-
           $stmt->bindValue(':name', $name);
           $stmt->bindValue(':email', $_SESSION['userEmail']);
           $stmt->bindValue(':rating', $_POST['rating']);
-          $stmt->bindValue(':review', $_POST['review']);
+          $stmt->bindValue(':review', $cleantext);
+          $stmt->execute();
 
+          $stmt = $pdo->prepare('SELECT rating FROM n8593370.reviews WHERE name = :name');
+          $stmt->bindValue(':name', $name);
+          $stmt->execute();
+
+          $ratings = $stmt->fetchAll();
+
+          $sum = 0;
+          $frequency = 0;
+          foreach($ratings as $rating){
+            $sum += $rating['rating'];
+            $frequency += 1;
+          }
+
+          $stmt = $pdo->prepare('UPDATE n8593370.items
+                                 SET AverageRating = :avgrating
+                                 WHERE Name = :name');
+          $stmt->bindValue(':avgrating', $sum / $frequency);
+          $stmt->bindValue(':name', $name);
           $stmt->execute();
         } catch(PDOException $e) {
             echo $e->getMessage();
         }
+
+
       }else{
         header("Location: http://{$_SERVER['HTTP_HOST']}/assignment/login.php");
         exit();
@@ -55,7 +77,7 @@
                </tr>
                <tr>
                  <td>Average User Rating:</td>
-                 <td>' . '</td>
+                 <td>' . $item['AverageRating'] . '</td>
                </tr>
                <tr>
                  <td>Theme:</td>

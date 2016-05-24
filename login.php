@@ -10,7 +10,7 @@
           $stmt->bindValue(':email', $_POST['email']);
           $stmt->execute();
         } catch (PDOException $e){
-            echo '<br><br><br>' . $e->getMessage();
+            echo $e->getMessage();
             header("Location: http://{$_SERVER['HTTP_HOST']}/assignment/login.php");
             exit();
         }

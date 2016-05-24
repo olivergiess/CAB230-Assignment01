@@ -13,7 +13,7 @@
     //Rating will always be included so the 1 = 1 will not be required
     //it is only a palceholder so conjunction can be performed for the suburb
     //conditional.
-    $queryString = 'SELECT * FROM n8593370.items WHERE 1 = 1';
+    $queryString = 'SELECT * FROM n8593370.items WHERE AverageRating >= :rating';
 
     if($suburb != ""){
       $queryString .= ' AND Suburb = :suburb';
@@ -30,7 +30,7 @@
     if($keywords != ""){
       $stmt->bindValue(':name', "%$keywords%");
     }
-
+    $stmt->bindValue(':rating', $rating);
     $stmt->execute();
     $results = $stmt->fetchAll();
 
@@ -60,13 +60,13 @@
                 <td>Description</td>
               </tr>';
         foreach($results as $result){
-          echo "<tr onclick=\"location.href='item.php?name=" . $result['Name'] . "'\">";
-            echo '<td>' . $result['Name'] . '</td>';
-            echo '<td>' . $result['PrimaryMaker'] . '</td>';
-            echo '<td>' . "1 out of 5" . '</td>';
-            echo '<td>' . $result['StreetLocation'] . '</td>';
-            echo '<td>' . $result['BriefDescription'] . '</td>';
-          echo '</tr>';
+          echo "<tr onclick=\"location.href='item.php?name=" . $result['Name'] . "'\">" .
+                  '<td>' . $result['Name'] . '</td>
+                  <td>' . $result['PrimaryMaker'] . '</td>
+                  <td>' . "1 out of 5" . '</td>
+                  <td>' . $result['StreetLocation'] . '</td>
+                  <td>' . $result['BriefDescription'] . '</td>
+                </tr>';
         }
       echo '</table>';
     } else {
