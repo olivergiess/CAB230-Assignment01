@@ -1,0 +1,25 @@
+#search-form{
+  margin-bottom: 2%;
+}
+
+#results table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid;
+}
+#results tr:first-child{
+  border: 1px solid;
+  background: #ffffcc;
+}
+#results tr:hover{
+  background: #ffffcc;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+#results td{
+  padding: 10px;
+}
+
+#results h1{
+  text-align: center;
+}

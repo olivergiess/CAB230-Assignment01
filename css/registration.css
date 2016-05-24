@@ -1,0 +1,11 @@
+#registration{
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+#registration .input-field:invalid{
+  border: 1px solid red;
+}
+#registration .input-field:valid{
+  border: 1px solid green;
+}

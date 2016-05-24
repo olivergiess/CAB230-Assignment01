@@ -1,9 +1,26 @@
 <?php
+  include('php/authentication.inc');
+
   if (isset($_POST['login'])){
-    if($_POST['username'] != "" && $_POST['password'] != ""){
-      if(checkPassword($_POST['username'], $_POST['password'])){
+    if($_POST['email'] != "" && $_POST['password'] != ""){
+      if(checkPassword($_POST['email'], $_POST['password'])){
+        include('php/connect.inc');
+        try{
+          $stmt = $pdo->prepare('SELECT firstname FROM n8593370.users WHERE email = :email');
+          $stmt->bindValue(':email', $_POST['email']);
+          $stmt->execute();
+        } catch (PDOException $e){
+            echo '<br><br><br>' . $e->getMessage();
+            header("Location: http://{$_SERVER['HTTP_HOST']}/assignment/login.php");
+            exit();
+        }
+
         session_start();
-        $_SESSION['isUser'] = true;
+
+        $_SESSION['userAuthenticated'] = true;
+        $_SESSION['userEmail'] = $_POST['email'];
+        $_SESSION['userName'] = $stmt->fetchColumn();
+
         header("Location: http://{$_SERVER['HTTP_HOST']}/assignment/index.php");
         exit();
       } else {
@@ -11,41 +28,26 @@
       }
     }
   }
+
+  include('php/template_top.inc');
+  echo '<link rel="stylesheet" type="text/css" href="css/login.css">';
+  include('php/template_middle.inc');
+
+  echo '<div id="login-form">
+          <form name="login" method="POST" action="login.php">
+            Email
+            <br>
+            <input type="text" name="email" class="input-field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
+            <br>
+            Password
+            <br>
+            <input type="password" name="password" class="input-field" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <br>
+            <input type="submit" name="login" value="Log In">
+            <button type="button" onclick="window.location.href=\'registration.php\'">Register
+            </button>
+          </form>
+        </div>';
+
+  include('php/template_bottom.inc');
 ?>
-
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <title>Brisbane Art</title>
-
-      <link rel="stylesheet" type="text/css" href="css-style-v1.0.css">
-  </head>
-
-  <body>
-
-    <div id="header">
-      <?php
-        include('php/menu.inc');
-      ?>
-    </div>
-
-    <div id="content">
-      <div id="login-form">
-        <form name="login" method="POST" action="login.php">
-          Email
-          <p>
-          <input type="text" name="email" class="input-field" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$" required>
-          <p>
-          Password
-          <p>
-          <input type="password" name="password" class="input-field" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-          <p>
-          <input type="submit" class="login-button" value="Log In">
-          <button type="button" class="register-button" onclick="window.location.href='registration.html'">Register
-          </button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>

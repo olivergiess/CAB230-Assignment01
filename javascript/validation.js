@@ -15,6 +15,19 @@ function validate() {
 
 	if(output != ""){
 		window.alert(output);
+		document.forms["registration-form"]["firstname"].value = "";
+ 		document.forms["registration-form"]["surname"].value = "";
+
+		document.forms["registration-form"]["email"].value = "";
+		document.forms["registration-form"]["confirmEmail"].value = "";
+
+		document.forms["registration-form"]["pwd"].value = "";
+		document.forms["registration-form"]["confirmPwd"].value = "";
+
+		document.forms["registration-form"]["day"].value = "";
+		document.forms["registration-form"]["month"].value = "";
+		document.forms["registration-form"]["year"].value = "";
+
 		return false;
 	} else {
 		return true;

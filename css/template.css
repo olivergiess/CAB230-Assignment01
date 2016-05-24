@@ -1,0 +1,106 @@
+@font-face {
+    font-family: main;
+    src: url('../assets/fonts/roboto/Roboto-Regular.ttf');
+    font-weight: bold;
+}
+
+body{
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+html, body{
+  height: 91.8%;
+}
+
+#header {
+  padding: 0 11%;
+  position: fixed;
+  z-index: 2;
+  top: 0%;
+  width: 78%;
+  max-height: 47px;
+
+  background-color: #333;
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.5);
+
+  font-family: main;
+}
+
+.right-element{
+  float: right;
+}
+
+#navigation .plain-text{
+  padding: 14px 16px;
+  text-align: center;
+  color: white;
+}
+#navigation ul {
+  /* Hides content if it excedes its container. */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  /* Removes the bullets. */
+  list-style-type: none;
+}
+#navigation li  a{
+  float: left;
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+#navigation li a:hover  {
+  background-color: #F1B919;
+}
+
+#content{
+  min-height: 102.2%;
+  padding: 2%;
+  position: relative;
+  z-index: 1;
+  left: 11%;
+  width: 74%;
+  top: 47px;
+
+  /* Using RGBA allows us to set opacity. */
+  background-color: rgba(255, 202, 38, 0.5);
+
+  font-family: main;
+}
+
+.input-field, .select-field, .input-radio{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  margin: 10px;
+  outline: none;
+}
+.input-field:focus, .select-field:focus{
+  border: 1px solid #35397E;
+}
+input[type=submit], input[type=reset], button{
+  padding: 8px 15px 8px 15px;
+  border: none;
+  background: #35397E;
+  color: #fff;
+  box-shadow: 1px 1px 4px #DADADA;
+  -moz-box-shadow: 1px 1px 4px #DADADA;
+  -webkit-box-shadow: 1px 1px 4px #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  margin: 10px;
+}

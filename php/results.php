@@ -51,7 +51,7 @@
     }
 
     if(!empty($results)){
-      echo '<table>
+      echo '<table class="search-table">
               <tr>
                 <td>Name</td>
                 <td>Artist</td>
@@ -60,7 +60,7 @@
                 <td>Description</td>
               </tr>';
         foreach($results as $result){
-          echo "<tr onclick='find_item(" . $result['ID'] . ")'>";
+          echo "<tr onclick=\"location.href='item.php?name=" . $result['Name'] . "'\">";
             echo '<td>' . $result['Name'] . '</td>';
             echo '<td>' . $result['PrimaryMaker'] . '</td>';
             echo '<td>' . "1 out of 5" . '</td>';

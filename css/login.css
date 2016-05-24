@@ -1,0 +1,11 @@
+#login-form{
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+#login-form .input-field:invalid{
+  border: 1px solid red;
+}
+#login-form .input-field:valid{
+  border: 1px solid green;
+}
